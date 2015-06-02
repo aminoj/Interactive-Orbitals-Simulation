@@ -1,0 +1,396 @@
+<html>
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <title>INTERACTIVE ORBITALS SIMULATION</title>
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+  <script type="text/javascript" src="jquery.min.js"></script>
+  
+  <script type="text/javascript" src="jquery.reel-min.js"></script>
+
+  <script type="text/javascript" >
+  $(document).ready(function(){
+
+    $('.btn.btn-primary').click(function(){
+      var $img = $(this).parent().parent().find('.reel-loader');
+      $img.reel({
+        images:      $img.data('images'),
+        frames:      20,
+        frame:       14,
+        rows:        6,
+        row:         3,
+        cw :  true,
+        speed:       0.3,
+      }).bind("loaded", function(ev){
+        setTimeout(function(){
+          $('.reel-loader').trigger("stop");
+        },500)
+        
+      }) 
+      
+
+    })
+  })
+  </script>
+
+  <style type="text/css">
+  body {
+    padding-top: 20px;
+  }
+
+  .footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+  }
+
+  /* Main marketing message and sign up button */
+  .jumbotron {
+    text-align: center;
+    background-color: transparent;
+  }
+  .jumbotron .btn {
+    padding: 14px 24px;
+    font-size: 21px;
+  }
+
+  /* Customize the nav-justified links to be fill the entire space of the .navbar */
+
+  .nav-justified {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .nav-justified > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: #777;
+    text-align: center;
+    background-color: #e5e5e5; /* Old browsers */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e5e5e5));
+    background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+    background-image:      -o-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(top), color-stop(0%, #f5f5f5), to(#e5e5e5));
+    background-image:         linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+    background-repeat: repeat-x; /* Repeat the gradient */
+    border-bottom: 1px solid #d5d5d5;
+  }
+  .nav-justified > .active > a,
+  .nav-justified > .active > a:hover,
+  .nav-justified > .active > a:focus {
+    background-color: #ddd;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
+    box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
+  }
+  .nav-justified > li:first-child > a {
+    border-radius: 5px 5px 0 0;
+  }
+  .nav-justified > li:last-child > a {
+    border-bottom: 0;
+    border-radius: 0 0 5px 5px;
+  }
+
+  @media (min-width: 768px) {
+    .nav-justified {
+      max-height: 52px;
+    }
+    .nav-justified > li > a {
+      border-right: 1px solid #d5d5d5;
+      border-left: 1px solid #fff;
+    }
+    .nav-justified > li:first-child > a {
+      border-left: 0;
+      border-radius: 5px 0 0 5px;
+    }
+    .nav-justified > li:last-child > a {
+      border-right: 0;
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  /* Responsive: Portrait tablets and up */
+  @media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .masthead,
+    .marketing,
+    .footer {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  </style>
+</head>
+<body>
+
+
+
+  <div class="container">
+
+      <!-- The justified navigation menu is meant for single line per list item.
+      Multiple lines will require custom code not provided by Bootstrap. -->
+      <div class="masthead">
+        <nav>
+          <ul class="nav nav-justified">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#1st">1st Energy Level</a></li>
+            <li><a href="#2st">2nd Energy Level</a></li>
+            <li><a href="#3st">3rd Energy Level</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>INTERACTIVE ORBITALS SIMULATION</h1>
+        <p>by Amin Ojjeh and Emanuele Gualandri </p>
+      </div>
+<div>
+
+
+
+
+
+
+
+
+
+
+<p><strong>Interactive Orbitals Simulation Description</strong></p>
+<p>&nbsp;</p>
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This project was fuelled by two students&rsquo; determination to create a computer simulation of orbitals that was interactive, easy-to-use and could be employed as a teaching tool by their Chemistry professor.</em></p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We can never know for sure where an electron will find itself at a given moment. This is why scientists have come up with atomic orbitals, three-dimensional maps of the probability distribution of the location of electrons in atoms. In other words, they are shapes that show where an electron is most likely to be found in the space around the nucleus. Schrodinger&rsquo;s equations can be used to create these shapes or their wave functions but since they were too complicated for our mathematical understanding we approximated them using <strong>quadric surfaces</strong>. After doing some research (the <a href="https://www.youtube.com/watch?v=x6c2DdOrkQI&amp;index=9&amp;list=LLttK84oFlWDpBLrTEe5P5gA">mathispower4u</a> series on the subject was especially useful) we decided to combine several different quadric surfaces to create the orbitals. Using grapher, a free graphing utility on Mac, we came up with the equations.</p>
+<p>Refer to separate document for equations.</p>
+<p>Refer to grapher files for first &lsquo;draft&rsquo; of equations in action.</p>
+<p>For example, for the 1s orbital, which is close to being a sphere, we simply used the equation for a sphere. For a 2p orbital, on the other hand, we had to combine a two sheet hyperboloid and two ellipsoids. We had to use inequalities to restrict the domains of the equations in order for them to fit together.</p>
+<p>A complicated problem arose once we got to the 3d orbitals - until then the work had been a matter of testing and figuring out the basics. The problem with 3 out of the 5 3d orbitals is that the shapes are not aligned with the axes but rather at 45&ordm; with respect to them (forming an X). In order to resolve this problem we got help from a Mathematics teacher at our school. We used a rotation matrix to get our new equations. The main line of thinking behind this procedure is that we wanted to shift our &ldquo;imaginary axes&rdquo; by 45&ordm;.</p>
+<p  class="text-center">
+<img src="text-image.png" />
+</p>
+<p>&nbsp;</p>
+<p>The coding process was quite complex as we had to use tools that we had never utilized before. Using the matplotlib library in Python we digitized the graphs. However, we were not able to successfully code the three 3d orbitals that required the transformation in the time that we had for the project (they will be coming soon). We then bought this domain, interactiveorbitals.com, and we used the mpld3 library to put the Python code online.</p>
+</div>
+<div class="clearfix"></div>
+
+      <h2 id="1st">1st Energy Level :</h2>
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-4">
+          <h3>1s</h3>
+          <button type="button" class="btn btn-primary">Load simulation</button>
+        </div>
+        <div class="col-lg-8">
+          <img
+          src="1s/movie000.png"
+          width="800" height="600"
+          class="reel-loader"
+          id="image"
+          data-frames="20"
+          data-frame="14"
+          data-rows="6"
+          data-row="3"
+          data-loops="false"
+          data-speed="0.3"
+          data-images="1s/movie###.png|0..119">
+        </div>
+
+      </div>
+
+      <h2 id="2st">2nd Energy Level :</h2>
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-4">
+          <h3>2s&2p</h3>
+          <button type="button" class="btn btn-primary">Load simulation</button>
+        </div>
+        <div class="col-lg-8">
+          <img
+          src="2s-2p/movie000.png"
+          width="800" height="600"
+          class="reel-loader"
+          id="image"
+          data-frames="20"
+          data-frame="14"
+          data-rows="6"
+          data-row="3"
+          data-loops="false"
+          data-speed="0.3"
+          data-images="2s-2p/movie###.png|0..119">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <h3>2s</h3>
+          <button type="button" class="btn btn-primary">Load simulation</button>
+        </div>
+        <div class="col-lg-8">
+          <img
+          src="2s/movie000.png"
+          width="800" height="600"
+          class="reel-loader"
+          id="image"
+          data-frames="20"
+          data-frame="14"
+          data-rows="6"
+          data-row="3"
+          data-loops="false"
+          data-speed="0.3"
+          data-images="2s/movie###.png|0..119">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <h3>2p</h3>
+          <button type="button" class="btn btn-primary">Load simulation</button>
+        </div>
+        <div class="col-lg-8">
+          <img
+          src="2p/movie000.png"
+          width="800" height="600"
+          class="reel-loader"
+          id="image"
+          data-frames="20"
+          data-frame="14"
+          data-rows="6"
+          data-row="3"
+          data-loops="false"
+          data-speed="0.3"
+          data-images="2p/movie###.png|0..119">
+        </div>
+      </div>
+
+      <!--  3st -->
+      <h2 id="3st">3rd Energy Level :</h2>
+
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-4">
+          <h3>3s</h3>
+          <button type="button" class="btn btn-primary">Load simulation</button>
+        </div>
+        <div class="col-lg-8">
+          <img
+          src="3s/movie000.png"
+          width="800" height="600"
+          class="reel-loader"
+          id="image"
+          data-frames="20"
+          data-frame="14"
+          data-rows="6"
+          data-row="3"
+          data-loops="false"
+          data-speed="0.3"
+          data-images="3s/movie###.png|0..119">
+        </div>
+
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-4">
+          <h3>3p</h3>
+          <button type="button" class="btn btn-primary">Load simulation</button>
+        </div>
+        <div class="col-lg-8">
+          <img
+          src="3p/movie021.png"
+          width="800" height="600"
+          class="reel-loader"
+          id="image"
+          data-frames="20"
+          data-frame="14"
+          data-rows="6"
+          data-row="3"
+          data-loops="false"
+          data-speed="0.3"
+          data-images="3p/movie###.png|21..119">
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-6">
+          <div>
+            <h4>3d <sub>z<sup>2</sup></sub> </h4>
+            <button type="button" class="btn btn-primary btn-sm">Load simulation</button>
+
+            <img
+            src="3d/movie000.png"
+            width="600" height="450"
+            class="reel-loader"
+            id="image"
+            data-frames="20"
+            data-frame="14"
+            data-rows="6"
+            data-row="3"
+            data-loops="false"
+            data-speed="0.3"
+            data-images="3d/movie###.png|0..119">
+          </div>
+        </div>
+        <div class="col-lg-6">
+
+          <div>
+            <h4>3d <sub>x<sup>2</sup> - y<sup>2</sup></sub></h4>
+            <button type="button" class="btn btn-primary btn-sm">Load simulation</button>
+
+            <img
+            src="3dPart2/movie021.png"
+            width="600" height="450"
+            class="reel-loader"
+            id="image"
+            data-frames="20"
+            data-frame="14"
+            data-rows="6"
+            data-row="3"
+            data-loops="false"
+            data-speed="0.3"
+            data-images="3dPart2/movie###.png|21..119">
+          </div>
+
+        </div>
+      </div>
+            <div class="row">
+        <div class="col-lg-1"><h5>3d <sub>xy</sub></h5></div>
+        <div class="col-lg-3"><img class="img-responsive" src="3dxy.png"/></div>
+        <div class="col-lg-1"><h5>3d <sub>xz</sub></h5></div>
+        <div class="col-lg-3"><img class="img-responsive" src="3dxz.png"/></div>
+        <div class="col-lg-1"><h5>3d <sub>yz</sub></h5></div>
+        <div class="col-lg-3"><img class="img-responsive" src="3dyz.png"/></div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="row">
+
+        <h3>Files available for Download:</h3>
+        <a href="Orbitals Interactive Simulation.docx" class="btn btn-info">Orbitals Interactive Simulation.docx</a>
+        <a href="1s2s3s2pOrbitals.gcx" class="btn btn-info">1s, 2s, 3s, 2p Orbitals.gcx</a>
+        <a href="3d Shifted Orbitals.gcx" class="btn btn-info">3d Shifted Orbitals.gcx</a>
+        <a href="3p Orbitals.gcx" class="btn btn-info">3p Orbitals.gcx</a>
+
+
+        
+        
+      </div>
+<br><br>
+
+
+<br><br>
+      <div class="clearfix"></div>
+
+
+
+    </div> <!-- /container -->
+
+
+
+  </body>
+  </html>
